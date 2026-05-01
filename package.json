@@ -1,0 +1,36 @@
+{
+  "name": "playwright-pom",
+  "version": "1.0.0",
+  "description": "TypeScript Playwright project with Page Object Model",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:codegen": "playwright codegen",
+    "type-check": "tsc --noEmit",
+    "test:lottery": "playwright test lottery-generated-integration.spec.ts",
+    "test:lottery:headed": "playwright test lottery-generated-integration.spec.ts --headed",
+    "test:generate": "playwright test fortune-generator-logging.spec.ts",
+    "test:generate:headed": "playwright test fortune-generator-logging.spec.ts --headed",
+    "test:generate:games": "node scripts/run-with-game-number.js",
+    "generate:10": "cross-env GAME_NUMBER=10 playwright test fortune-generator-with-params.spec.ts --headed",
+    "generate:20": "cross-env GAME_NUMBER=20 playwright test fortune-generator-with-params.spec.ts --headed",
+    "generate:50": "cross-env GAME_NUMBER=50 playwright test fortune-generator-with-params.spec.ts --headed",
+    "generate:5": "cross-env GAME_NUMBER=5 playwright test fortune-generator-with-params.spec.ts --headed"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "page-object-model",
+    "e2e"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.11.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
+    "typescript": "^5.3.0"
+  }
+}
